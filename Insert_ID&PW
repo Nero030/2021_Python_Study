@@ -1,0 +1,11 @@
+while 1:
+    textID = input('아이디를 입력해주세요. : ')
+    if textID == 'lovepython!':
+        textPW = input('비밀번호를 입력해주세요. : ')
+        if textPW == 'p12345':
+            print('lovePython!님 환영합니다~!!')
+            break
+        elif textPW != 'p12345' :
+            print('비밀번호가 틀립니다.')
+    elif textID != 'lovepython!':
+        print('아이디를 찾을수 없습니다.')
