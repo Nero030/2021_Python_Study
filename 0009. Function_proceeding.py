@@ -32,3 +32,25 @@ def quadratic(a, b, c, x) :
     return first + second + third
 
 print(quadratic(2, 3, 4, 1.5))
+
+''' 메모리 모델로 함수 호출 추적 ??
+def f(x) :
+    x = 2 * x
+    return x # ??????????????
+
+print(x = 1)
+print(x = f(x + 1) + f(x + 2))'''
+
+# 함수 작성시 :
+# 함수명은 무엇으로 할것인가?
+# 매개변수는 무엇이고 각 매개변수는 어떤 종류의 정보를 참조하는가?
+# 그 정보로 어떤 계산을 수행하는가?
+# 함수가 반환하는 정보는 무엇인가?
+# 기대대로 작동하는가?
+
+def days_difference(day1: int, day2: int) -> int : # 헤더, -> 타입표기 (생략가능)
+    '''day1과 day2간 날짜수 차이를 반환한다.
+    이때 day1과 day2는 1에서 365 사이의 값이다.''' # 설명
+    return day2 - day1 # 본문
+
+print(days_difference(200, 224)) # 테스트
