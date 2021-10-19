@@ -54,3 +54,14 @@ def days_difference(day1: int, day2: int) -> int : # 헤더, -> 타입표기 (�
     return day2 - day1 # 본문
 
 print(days_difference(200, 224)) # 테스트
+
+# EX) 세개의 생일 계산 함수 디자인
+# 일요일 1, 월요일 2, 화요일 3, 수요일 4, 목요일 5, 금요일 6, 토요일 7
+
+def get_weekday(current_weekday: int, days_ahead: int) -> int :
+    '''current_weekday에서 day_ahead만큼 지나면 무슨 요일인지 반환한다.
+       current_weekday는 현재 요일로서 범위는 1부터 7까지이다.
+       days_ahead는 오늘부터 며칠 후인지 뜻한다.'''
+    return (current_weekday + days_ahead - 1) % 7 + 1
+
+print(get_weekday(3, 1))
