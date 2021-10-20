@@ -48,6 +48,9 @@ print(x = f(x + 1) + f(x + 2))'''
 # 함수가 반환하는 정보는 무엇인가?
 # 기대대로 작동하는가?
 
+# EX) 일요일 1, 월요일 2, 화요일 3, 수요일 4, 목요일 5, 금요일 6, 토요일 7  
+
+# 1
 def days_difference(day1: int, day2: int) -> int : # 헤더, -> 타입표기 (생략가능)
     '''day1과 day2간 날짜수 차이를 반환한다.
     이때 day1과 day2는 1에서 365 사이의 값이다.''' # 설명
@@ -55,9 +58,7 @@ def days_difference(day1: int, day2: int) -> int : # 헤더, -> 타입표기 (�
 
 print(days_difference(200, 224)) # 테스트
 
-# EX) 세개의 생일 계산 함수 디자인
-# 일요일 1, 월요일 2, 화요일 3, 수요일 4, 목요일 5, 금요일 6, 토요일 7
-
+# 2
 def get_weekday(current_weekday: int, days_ahead: int) -> int :
     '''current_weekday에서 day_ahead만큼 지나면 무슨 요일인지 반환한다.
        current_weekday는 현재 요일로서 범위는 1부터 7까지이다.
@@ -65,3 +66,14 @@ def get_weekday(current_weekday: int, days_ahead: int) -> int :
     return (current_weekday + days_ahead - 1) % 7 + 1
 
 print(get_weekday(3, 1))
+
+# 3
+def get_birthday_weekday (current_weekday: int, current_day: int, birthday_day: int) -> int :
+    '''요일은 current_weekday, 그해의 몇 번째 날인지는 current_day 일떄,
+       birthday_day가 무슨 요일인지 반환한다.
+       current_weekday는 현재 요일로서 범위는 1부터 7까지.
+       current_day와 birthday는 1부터 365 사이의 값이다.'''
+    days_diff = days_difference(current_day, birthday_day)
+    return get_weekday(current_weekday, days_diff)
+
+print(get_birthday_weekday(5, 3, 4))
